@@ -1,4 +1,6 @@
 // 在head 中 加载 必要静态
+document.write('<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">');
+document.write('<script src="//cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>');
 document.write('<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">');
 // markdown支持
 document.write('<script src="//cdn.jsdelivr.net/npm/markdown-it@9.1.0/dist/markdown-it.min.js"></script>');
@@ -253,7 +255,11 @@ function file_video(path){
 	<br>
 	<video class="mdui-video-fluid mdui-center" preload controls>
 	  <source src="${url}" type="video/mp4">
-	</video>
+    </video>
+    <div class="Dplayer_box">
+        <div class="player_av">
+            <div id="player1"></div>
+        </div>
 	<br>
 	<!-- 固定标签 -->
 	<div class="mdui-textfield">
@@ -266,7 +272,17 @@ function file_video(path){
 	</div>
 </div>
 <a href="${url}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
-	`;
+<script>
+var url = "https://gd.fdkevin.xyz/test.mp4";
+var dp = new DPlayer({
+    element: document.getElementById('player1'),
+    preload: 'metadata',
+    video: {
+        url: ${url} 
+    }
+});
+
+`;
 	$('#content').html(content);
 }
 
