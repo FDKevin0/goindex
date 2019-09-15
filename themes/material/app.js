@@ -252,7 +252,7 @@ function file_video(path){
 <div class="mdui-container-fluid">
 	<br>
 	<video class="mdui-video-fluid mdui-center" preload controls>
-	  <source src="${url}" type="video/mp4">
+// 	  <source src="${url}" type="video/mp4">
 	</video>
 	<br>
 	<!-- 固定标签 -->
